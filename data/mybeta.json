@@ -1,0 +1,20 @@
+{
+	"name": "MyBeta login",
+	"domains": [
+		"my.beta.org"
+	],
+	"issues": [
+		{
+			"issue_name": "special_characters",
+			"type": "rejection",
+			"chars": ["<", ">", "="]
+		},
+		{
+			"issue_name": "length",
+			"type": "rejection",
+			"notes": "It seems to be possible to register with a password longer than this, but then logins fail.",
+			"max_length": 14
+		}
+	]
+}
+
