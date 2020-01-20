@@ -4,13 +4,13 @@
 		"ultipro.com"
 	],
 	"issues": [
-		"special_characters": {
+		{
+			"issue_name": "special_characters",
 			"type": "crash",
 			"possible_chars": ["<", ">", "\\", "/", "`", "%", "=", "#", "*", "$", "|"],
 			"examples": [
-				"+5\w./RBW#$3|9*cY%P9CqBk<k`Z+#bMum&aaNR=qG<6RN4%l>"
+				"+5\\w./RBW#$3|9*cY%P9CqBk<k`Z+#bMum&aaNR=qG<6RN4%l>"
 			]
 		}
 	]
 }
-
