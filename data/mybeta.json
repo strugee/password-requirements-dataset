@@ -1,7 +1,8 @@
 {
 	"name": "MyBeta login",
 	"domains": [
-		"my.beta.org"
+		"my.beta.org",
+		"services.beta.org"
 	],
 	"issues": [
 		{
