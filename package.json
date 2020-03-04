@@ -4,7 +4,7 @@
   "description": "Dataset of what websites impose insecure password limits, or crash on strong passwords",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ajv --errors=text -s schema.json -d 'data/*.json'"
   },
   "repository": {
     "type": "git",
