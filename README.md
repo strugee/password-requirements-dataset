@@ -1,5 +1,7 @@
 # Password requirements dataset
 
+[![Build Status](https://travis-ci.org/strugee/password-requirements-dataset.svg?branch=master)](https://travis-ci.org/strugee/password-requirements-dataset)
+
 This repository contains a database of password limits that different websites impose. The major focus is on limits that are arbitrary, indicate some underlying insecure design, or prevent the usage of strong passwords (e.g. because strong passwords crash the website).
 
 # License
