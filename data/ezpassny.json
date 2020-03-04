@@ -1,0 +1,14 @@
+{
+	"name": "E-ZPass NY",
+	"domains": [
+		"www.e-zpassny.com"
+	],
+	"issues": [
+		{
+			"issue_name": "length",
+			"type": "rejection",
+			"source": "description",
+			"max_length": 12
+		}
+	]
+}
