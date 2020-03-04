@@ -1,0 +1,137 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "required": [
+        "name",
+        "domains",
+        "issues"
+    ],
+    "properties": {
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "Entry name",
+            "description": "Human-readable name of the site being described by the entry",
+            "default": "",
+            "examples": [
+                "MyBeta login"
+            ]
+        },
+        "domains": {
+            "$id": "#/properties/domains",
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "title": "Domains",
+            "description": "Schemaless, machine-readable list of fully-qualified domain names that the entry is describing",
+            "default": [],
+            "items": {
+                "$id": "#/properties/domains/items",
+                "type": "string",
+                "title": "",
+                "description": "",
+                "default": "",
+                "examples": [
+                    "example.org",
+                    "www.example.net"
+                ]
+            }
+        },
+        "issues": {
+            "$id": "#/properties/issues",
+            "type": "array",
+            "title": "Issues",
+            "description": "List of known, partially-known, or suspected password restrictions present on this entry's domains",
+            "default": [],
+            "items": {
+                "$id": "#/properties/issues/items",
+                "type": "object",
+                "title": "",
+                "description": "",
+                "default": {},
+                "examples": [
+                    {
+                        "type": "rejection",
+                        "source": "observation",
+                        "issue_name": "special_characters",
+                        "chars": [
+                            "<",
+                            ">",
+                            "="
+                        ]
+                    },
+                    {
+                        "issue_name": "length",
+                        "notes": "It seems to be possible to register with a password longer than this, but then logins fail.",
+                        "type": "rejection",
+                        "max_length": 14.0,
+                        "source": "observation"
+                    }
+                ],
+                "required": [
+                    "issue_name",
+                    "type",
+                    "source"
+                ],
+                "properties": {
+                    "issue_name": {
+                        "$id": "#/properties/issues/items/properties/issue_name",
+                        "type": "string",
+                        "title": "Issue name",
+                        "description": "Machine-readable name of the well-known password restriction being described",
+                        "default": "",
+                        "examples": [
+                            "special_characters"
+                        ],
+                        "pattern": ""
+                    },
+                    "type": {
+                        "$id": "#/properties/issues/items/properties/type",
+                        "type": "string",
+                        "title": "Behavior type",
+                        "description": "Machine-readable description of what website behavior is caused by the issue: whether it causes the website to reject the password, or to accept it but later crash when the password is used",
+                        "default": "",
+                        "examples": [
+                            "rejection"
+                        ]
+                    },
+                    "source": {
+                        "$id": "#/properties/issues/items/properties/source",
+                        "type": "string",
+                        "title": "Data source",
+                        "description": "Machine-readable description of the methodology used to get this data: whether the data is based on real-world observation, or based on a textual description in the webpage",
+                        "default": "",
+                        "examples": [
+                            "observation"
+                        ]
+                    },
+                    "chars": {
+                        "$id": "#/properties/issues/items/properties/chars",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "minItems": 1,
+                        "title": "Special characters",
+                        "description": "List of special characters that definitely cause password invalidation or crashes.",
+                        "default": [],
+                        "items": {
+                            "$id": "#/properties/issues/items/properties/chars/items",
+                            "type": "string",
+                            "minLength": 1,
+                            "title": "",
+                            "description": "",
+                            "default": "",
+                            "examples": [
+                                "<",
+                                ">",
+                                "="
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
