@@ -2,8 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "http://example.com/example.json",
     "type": "object",
-    "title": "The Root Schema",
-    "description": "The root schema comprises the entire JSON document.",
+    "title": "Password requrement dataset entry",
     "required": [
         "name",
         "domains",
@@ -26,13 +25,12 @@
             "uniqueItems": true,
             "minItems": 1,
             "title": "Domains",
-            "description": "Schemaless, machine-readable list of fully-qualified domain names that the entry is describing",
+            "description": "Machine-readable list of schemaless, fully-qualified domain names that the entry is describing",
             "default": [],
             "items": {
                 "$id": "#/properties/domains/items",
                 "type": "string",
-                "title": "",
-                "description": "",
+                "format": "hostname",
                 "default": "",
                 "examples": [
                     "example.org",
