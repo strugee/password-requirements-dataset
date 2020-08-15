@@ -4,6 +4,15 @@
 
 This repository contains a database of password limits that different websites impose. The major focus is on limits that are arbitrary, indicate some underlying insecure design, or prevent the usage of strong passwords (e.g. because strong passwords crash the website).
 
+## Goals
+
+This the overarching, ambitious goal of this project is to improve the state of internet password security by doing two things:
+
+1. Helping users pick the strongest passwords they are allowed to for websites
+2. Enabling public shaming of websites that don't get this right
+
+Eventually it would be awesome if this data was used by password managers to generate even stronger passwords, without having to make conservative choices for broad compatibility. But the data included is designed to be flexible and detailed enough to enable all sorts of applications that haven't even been thought of yet.
+
 ## Usage
 
 Each entry in the dataset is represented in a JSON file in the `data/` directory. Copyright is waived on this data (see "License" below), so you are welcome to do whatever you want with it. That being said, if you build tooling around this dataset - for example, to load it into a SQLite database so it can be efficiently queried, or a hall of shame page for websites with bad password practices - you are _highly_ encouraged to submit either your tool itself or a link to your tool in a Pull Request.
