@@ -8,7 +8,7 @@
 			"issue_name": "special_characters",
 			"type": "crash",
 			"source": "observation",
-			"possible_chars": ["<", ">", "\\", "/", "`", "%", "=", "#", "*", "$", "|"],
+			"chars": ["<", ">", "\\", "/", "`", "%", "=", "#", "*", "$", "|"],
 			"examples": [
 				"+5\\w./RBW#$3|9*cY%P9CqBk<k`Z+#bMum&aaNR=qG<6RN4%l>"
 			]

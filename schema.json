@@ -66,7 +66,7 @@
                         "issue_name": "length",
                         "notes": "It seems to be possible to register with a password longer than this, but then logins fail.",
                         "type": "rejection",
-                        "max_length": 14.0,
+                        "max_length": 14,
                         "source": "observation"
                     }
                 ],
@@ -75,6 +75,7 @@
                     "type",
                     "source"
                 ],
+                "additionalProperties": false,
                 "properties": {
                     "issue_name": {
                         "$id": "#/properties/issues/items/properties/issue_name",
@@ -84,8 +85,7 @@
                         "default": "",
                         "examples": [
                             "special_characters"
-                        ],
-                        "pattern": ""
+                        ]
                     },
                     "type": {
                         "$id": "#/properties/issues/items/properties/type",
@@ -112,12 +112,17 @@
                             "description"
                         ]
                     },
+                    "examples": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "Examples of passwords that wouldn't work"
+                    },
                     "additional_sources": {
                         "$id": "#/properties/issues/items/properties/additional_sources",
                         "type": "array",
-			"uniqueItems": true,
+                        "uniqueItems": true,
                         "title": "Secondary/alternate data sources",
-			"description": "An array of values with the same (machine-readable) semantics as the `source` property. Can be used to express e.g. that the restriction was observationally confirmed after getting the information from the website text.",
+                        "description": "An array of values with the same (machine-readable) semantics as the `source` property. Can be used to express e.g. that the restriction was observationally confirmed after getting the information from the website text.",
                         "default": [],
                         "items": {
                             "$id": "#/properties/issues/items/properties/additional_sources/items",
@@ -135,29 +140,49 @@
                             ]
                         }
                     },
-                    "chars": {
-                        "$id": "#/properties/issues/items/properties/chars",
-                        "type": "array",
-                        "uniqueItems": true,
-                        "minItems": 1,
-                        "title": "Special characters",
-                        "description": "List of special characters that definitely cause password invalidation or crashes.",
-                        "default": [],
-                        "items": {
-                            "$id": "#/properties/issues/items/properties/chars/items",
-                            "type": "string",
-                            "minLength": 1,
-                            "title": "",
-                            "description": "",
-                            "default": "",
-                            "examples": [
-                                "<",
-                                ">",
-                                "="
-                            ]
+                    "notes": {
+                        "type": "string",
+                        "title": "Human-readable notes about the restrictions"
+                    },
+                    "chars": {},
+                    "max_length": {},
+                    "min_length": {}
+                },
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "issue_name": {"enum": ["special_characters"]},
+                            "chars": {
+                                "$id": "#/properties/issues/items/properties/chars",
+                                "type": "array",
+                                "uniqueItems": true,
+                                "minItems": 1,
+                                "title": "Special characters",
+                                "description": "List of special characters that definitely cause password invalidation or crashes.",
+                                "items": {
+                                    "$id": "#/properties/issues/items/properties/chars/items",
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "examples": [
+                                        "<",
+                                        ">",
+                                        "="
+                                    ]
+                                }
+                            }
+                        },
+                        "required": ["chars"]
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "issue_name": {"enum": ["length"]},
+                            "max_length": {"type": "integer"},
+                            "min_length": {"type": "integer"}
                         }
                     }
-                }
+                ]
             }
         }
     }
