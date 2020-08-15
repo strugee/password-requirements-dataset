@@ -8,6 +8,7 @@
         "domains",
         "issues"
     ],
+    "additionalProperties": false,
     "properties": {
         "name": {
             "$id": "#/properties/name",
