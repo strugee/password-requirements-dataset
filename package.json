@@ -1,22 +1,22 @@
 {
-  "name": "password-requirements-dataset",
-  "version": "1.0.0",
-  "description": "Dataset of what websites impose insecure password limits, or crash on strong passwords",
-  "main": "index.js",
-  "scripts": {
-    "test": "ajv --errors=text -s schema.json -d 'data/*.json'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/strugee/password-requirements-dataset.git"
-  },
-  "author": "AJ Jordan <alex@strugee.net>",
-  "license": "CC0-1.0",
-  "bugs": {
-    "url": "https://github.com/strugee/password-requirements-dataset/issues"
-  },
-  "homepage": "https://github.com/strugee/password-requirements-dataset#readme",
-  "dependencies": {
-    "ajv-cli": "^3.1.0"
-  }
+	"name": "password-requirements-dataset",
+	"version": "1.0.0",
+	"description": "Dataset of what websites impose insecure password limits, or crash on strong passwords",
+	"main": "index.js",
+	"scripts": {
+		"test": "ajv --errors=text -s schema.json -d 'data/*.json'"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/strugee/password-requirements-dataset.git"
+	},
+	"author": "AJ Jordan <alex@strugee.net>",
+	"license": "CC0-1.0",
+	"bugs": {
+		"url": "https://github.com/strugee/password-requirements-dataset/issues"
+	},
+	"homepage": "https://github.com/strugee/password-requirements-dataset#readme",
+	"dependencies": {
+		"ajv-cli": "^3.1.0"
+	}
 }
