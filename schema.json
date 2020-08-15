@@ -112,6 +112,29 @@
                             "description"
                         ]
                     },
+                    "additional_sources": {
+                        "$id": "#/properties/issues/items/properties/additional_sources",
+                        "type": "array",
+			"uniqueItems": true,
+                        "title": "Secondary/alternate data sources",
+			"description": "An array of values with the same (machine-readable) semantics as the `source` property. Can be used to express e.g. that the restriction was observationally confirmed after getting the information from the website text.",
+                        "default": [],
+                        "items": {
+                            "$id": "#/properties/issues/items/properties/additional_sources/items",
+                            "type": "string",
+                            "title": "Secondary data source",
+                            "description": "",
+                            "enum": [
+                                    "observation",
+                                    "description"
+                            ],
+                            "default": "",
+                            "examples": [
+                                "observation",
+                                "description"
+                            ]
+                        }
+                    },
                     "chars": {
                         "$id": "#/properties/issues/items/properties/chars",
                         "type": "array",
