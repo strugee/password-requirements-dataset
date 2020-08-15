@@ -101,9 +101,14 @@
                         "type": "string",
                         "title": "Data source",
                         "description": "Machine-readable description of the methodology used to get this data: whether the data is based on real-world observation, or based on a textual description in the webpage",
+                        "enum": [
+                                "observation",
+                                "description"
+                        ],
                         "default": "",
                         "examples": [
-                            "observation"
+                            "observation",
+                            "description"
                         ]
                     },
                     "chars": {
