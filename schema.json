@@ -11,23 +11,19 @@
 	"additionalProperties": false,
 	"properties": {
 		"name": {
-			"$id": "#/properties/name",
 			"type": "string",
 			"title": "Entry name",
 			"description": "Human-readable name of the site being described by the entry",
-			"default": "",
 			"examples": [
 				"MyBeta login"
 			]
 		},
 		"domains": {
-			"$id": "#/properties/domains",
 			"type": "array",
 			"uniqueItems": true,
 			"minItems": 1,
 			"title": "Domains",
 			"description": "Machine-readable list of schemaless, fully-qualified domain names that the entry is describing",
-			"default": [],
 			"items": {
 				"$id": "#/properties/domains/items",
 				"type": "string",
@@ -40,17 +36,12 @@
 			}
 		},
 		"issues": {
-			"$id": "#/properties/issues",
 			"type": "array",
 			"title": "Issues",
 			"description": "List of known, partially-known, or suspected password restrictions present on this entry's domains",
 			"default": [],
 			"items": {
-				"$id": "#/properties/issues/items",
 				"type": "object",
-				"title": "",
-				"description": "",
-				"default": {},
 				"examples": [
 					{
 						"type": "rejection",
@@ -78,11 +69,9 @@
 				"additionalProperties": false,
 				"properties": {
 					"issue_name": {
-						"$id": "#/properties/issues/items/properties/issue_name",
 						"type": "string",
 						"title": "Issue name",
 						"description": "Machine-readable name of the well-known password restriction being described",
-						"default": "",
 						"examples": [
 							"special_characters"
 						]
@@ -92,24 +81,15 @@
 						"type": "string",
 						"title": "Behavior type",
 						"description": "Machine-readable description of what website behavior is caused by the issue: whether it causes the website to reject the password, or to accept it but later crash when the password is used",
-						"default": "",
-						"examples": [
-							"rejection"
-						]
+						"enum": ["rejection", "crash"]
 					},
 					"source": {
-						"$id": "#/properties/issues/items/properties/source",
 						"type": "string",
 						"title": "Data source",
 						"description": "Machine-readable description of the methodology used to get this data: whether the data is based on real-world observation, or based on a textual description in the webpage",
 						"enum": [
 								"observation",
 								"description"
-						],
-						"default": "",
-						"examples": [
-							"observation",
-							"description"
 						]
 					},
 					"examples": {
@@ -118,25 +98,17 @@
 						"description": "Examples of passwords that wouldn't work"
 					},
 					"additional_sources": {
-						"$id": "#/properties/issues/items/properties/additional_sources",
 						"type": "array",
 						"uniqueItems": true,
 						"title": "Secondary/alternate data sources",
 						"description": "An array of values with the same (machine-readable) semantics as the `source` property. Can be used to express e.g. that the restriction was observationally confirmed after getting the information from the website text.",
 						"default": [],
 						"items": {
-							"$id": "#/properties/issues/items/properties/additional_sources/items",
 							"type": "string",
 							"title": "Secondary data source",
-							"description": "",
 							"enum": [
 									"observation",
 									"description"
-							],
-							"default": "",
-							"examples": [
-								"observation",
-								"description"
 							]
 						}
 					},
@@ -154,14 +126,12 @@
 						"properties": {
 							"issue_name": {"enum": ["special_characters"]},
 							"chars": {
-								"$id": "#/properties/issues/items/properties/chars",
 								"type": "array",
 								"uniqueItems": true,
 								"minItems": 1,
 								"title": "Special characters",
 								"description": "List of special characters that definitely cause password invalidation or crashes.",
 								"items": {
-									"$id": "#/properties/issues/items/properties/chars/items",
 									"type": "string",
 									"minLength": 1,
 									"examples": [
