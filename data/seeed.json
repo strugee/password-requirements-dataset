@@ -1,0 +1,15 @@
+{
+	"name": "Seeed Studio",
+	"domains": [
+		"seeedstudio.com"
+	],
+	"issues": [
+		{
+			"issue_name": "length",
+			"type": "rejection",
+			"source": "description",
+			"additional_sources": ["observation"],
+			"max_length": 18
+		}
+	]
+}
