@@ -1,0 +1,14 @@
+{
+	"name": "TikTok",
+	"domains": [
+		"tiktok.com"
+	],
+	"issues": [
+		{
+			"issue_name": "length",
+			"type": "rejection",
+			"source": "observation",
+			"max_length": 20
+		}
+	]
+}
