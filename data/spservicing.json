@@ -1,0 +1,15 @@
+{
+    "name": "Select Portfolio Servicing, inc. login",
+    "domains": [
+        "spservicing.com"
+    ],
+    "issues": [
+        {
+            "issue_name": "length",
+            "type": "rejection",
+            "source": "observation",
+            "notes": "It is possible to register with a password longer than this, but then logins fail.",
+            "max_length": 8
+        }
+    ]
+}
